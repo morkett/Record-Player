@@ -1,0 +1,108 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  overflow: hidden; }
+
+.bkd {
+  position: absolute; }
+
+#player {
+  height: 531.5px;
+  width: 486.5px;
+  z-index: 1; }
+
+#record {
+  z-index: 20;
+  -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
+  -ms-transform-origin: 40% 40%;
+      transform-origin: 40% 40%;
+  transition: transform 1s ease-in-out;
+  height: 531.5px;
+  width: 486.5px; }
+
+.spin {
+  animation: spin .7s linear 0s infinite forwards; }
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg); } }
+
+#needle {
+  z-index: 30;
+  -ms-transform: rotate(30deg);
+      transform: rotate(30deg);
+  -ms-transform-origin: 700px 100px;
+      transform-origin: 700px 100px;
+  transition: transform 1s ease-in-out;
+  -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
+  height: 531.5px;
+  width: 486.5px; }
+
+.needle-on {
+  -ms-transform: rotate(30.5deg) !important;
+      transform: rotate(30.5deg) !important; }
+
+.needle-shake {
+  animation: needle-shake 3s linear 0s alternate infinite; }
+
+@keyframes needle-shake {
+  from {
+    transform: rotate(30.5deg); }
+  50% {
+    transform: rotate(30deg); }
+  to {
+    transform: rotate(29.5deg); } }

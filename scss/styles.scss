@@ -1,0 +1,90 @@
+@import "resets";
+@import "config";
+@import "mixins";
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.bkd {
+  // height: 100vh;
+  // width: 100vw;
+  // height: 531.5px
+  // width: 1063px;
+  position: absolute;
+}
+
+#player {
+  // background: url(../images/player.png) center center no-repeat;
+  // background-size: contain;
+  // background-size: 531.5px 486.5px;
+  height: 531.5px;
+  width: 486.5px;
+  z-index: 1;
+}
+
+#record {
+  // background: url(../images/record.png) center center no-repeat;
+  // background-size: contain;
+  // background-size: 531.5px 486.5px;
+  z-index: 20;
+  transform: rotate(0deg);
+  transform-origin: 40% 40%;
+  transition: transform 1s ease-in-out;
+
+  // filter: blur(0.05em);
+  height: 531.5px;
+  width: 486.5px;
+}
+
+.spin {
+  animation: spin .7s linear 0s infinite forwards;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#needle {
+  // background: url(../images/needle.png) center center no-repeat;
+  // background-size: contain;
+  // background-size: 531.5px 486.5px;
+  z-index: 30;
+  transform: rotate(30deg);
+  transform-origin: 700px 100px;
+  transition: transform 1s ease-in-out;
+  transform: rotate(0deg);
+  height: 531.5px;
+  width: 486.5px;
+}
+
+.needle-on {
+  transform: rotate(30.5deg) !important;
+}
+
+.needle-shake {
+  animation: needle-shake 3s linear 0s alternate infinite;
+}
+
+@keyframes needle-shake {
+  from {
+    transform: rotate(30.5deg);
+  }
+
+  50% {
+    transform: rotate(30deg);
+  }
+
+  to {
+    transform: rotate(29.5deg);
+  }
+}
+
+// STYLES GO HERE //
+@import "js";
