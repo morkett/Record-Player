@@ -3,42 +3,46 @@
 @import "mixins";
 
 body {
+  position: relative;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  font-size: 16px;
+}
+
+.wrap {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #cdd0cc;
+}
+
+.wrap::after {
+  @include pseudo;
 }
 
 .bkd {
-  // height: 100vh;
-  // width: 100vw;
-  // height: 531.5px
-  // width: 1063px;
+  height: 614px;
+  width: 671px;
   position: absolute;
 }
 
 #player {
-  // background: url(../images/player.png) center center no-repeat;
-  // background-size: contain;
-  // background-size: 531.5px 486.5px;
-  height: 531.5px;
-  width: 486.5px;
   z-index: 1;
+  -webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 #record {
-  // background: url(../images/record.png) center center no-repeat;
-  // background-size: contain;
-  // background-size: 531.5px 486.5px;
   z-index: 20;
   transform: rotate(0deg);
-  transform-origin: 40% 40%;
+  transform-origin: 248px 248px;
   transition: transform 1s ease-in-out;
-
-  // filter: blur(0.05em);
-  height: 531.5px;
-  width: 486.5px;
 }
 
 .spin {
@@ -52,20 +56,16 @@ body {
 }
 
 #needle {
-  // background: url(../images/needle.png) center center no-repeat;
-  // background-size: contain;
-  // background-size: 531.5px 486.5px;
   z-index: 30;
-  transform: rotate(30deg);
-  transform-origin: 700px 100px;
-  transition: transform 1s ease-in-out;
+  transform: rotate(26deg);
+  transform-origin: 520px 60px;
+  transition: transform 1s ease-in-out, background .1s linear;
   transform: rotate(0deg);
-  height: 531.5px;
-  width: 486.5px;
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .needle-on {
-  transform: rotate(30.5deg) !important;
+  transform: rotate(26deg) !important;
 }
 
 .needle-shake {
@@ -74,17 +74,95 @@ body {
 
 @keyframes needle-shake {
   from {
-    transform: rotate(30.5deg);
+    transform: rotate(25.5deg);
   }
 
   50% {
-    transform: rotate(30deg);
+    transform: rotate(26deg);
   }
 
   to {
-    transform: rotate(29.5deg);
+    transform: rotate(26.5deg);
   }
 }
 
-// STYLES GO HERE //
+.shadow:after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 430px;
+  width: 0px;
+  transform-origin: top center;
+  transform: translateX(200px) translateY(-300px) rotate(0deg);
+  z-index: 25;
+  opacity: .7;
+  border: 15px solid #000;
+  filter: blur(0.5em);
+  border-radius: 50%;
+  transition: transform 1s ease-in-out;
+}
+
+.shadow-rotate:after {
+  transform: translateX(210px) translateY(-250px) rotate(26deg);
+  z-index: 25;
+}
+
+.shadow-shake:after {
+  animation: shadow-shake 3s linear 0s alternate infinite;
+  z-index: 25;
+}
+
+@keyframes shadow-shake {
+  from {
+    transform: translateX(210px) translateY(-250px) rotate(25.5deg);
+  }
+
+  50% {
+    transform: translateX(210px) translateY(-250px) rotate(26deg);
+  }
+
+  to {
+    transform: translateX(210px) translateY(-250px) rotate(26.5deg);
+  }
+}
+
+.btn-on {
+  height: 500px;
+  width: 90px;
+  opacity: .5;
+  position: fixed;
+  transform: translateX(200px);
+  z-index: 999;
+  transform: rotate(10deg) translateX(190px) translateY(-80px);
+  cursor: pointer;
+}
+
+.btn-off {
+  height: 500px;
+  width: 90px;
+  opacity: .5;
+  position: absolute;
+  z-index: 999;
+  transform: rotate(35deg) translateX(60px) translateY(-110px);
+  cursor: pointer;
+}
+
+p {
+  position: absolute;
+  display: block;
+  height: 100vh;
+  width: 100vw;
+  z-index: 995;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+  color: #cdd0cc;
+  font-size: 2em;
+  text-align: center;
+  line-height: 1.5;
+  letter-spacing: .1em;
+  font-family: Helvetica;
+}
+
 @import "js";
