@@ -1,12 +1,12 @@
-# Blank Template
+# Record Player
 
-Blank template for new projects
+Record Player Experiment With jQuery & CSS Animations
 
 ## Included:
 
 * HTML
 * .scss (+resets)
-* external js
+* jQuery
 
 * Gulp Automation 
 
