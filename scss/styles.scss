@@ -15,20 +15,18 @@ body {
   position: relative;
   height: 100vh;
   width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: #cdd0cc;
-}
-
-.wrap::after {
-  @include pseudo;
 }
 
 .bkd {
   height: 614px;
   width: 671px;
+  margin: auto;
   position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 #player {
@@ -61,7 +59,8 @@ body {
   transform-origin: 520px 60px;
   transition: transform 1s ease-in-out, background .1s linear;
   transform: rotate(0deg);
-  background: rgba(0, 0, 0, 0.7);
+
+  // background: rgba(0, 0, 0, 0.7);
 }
 
 .needle-on {
@@ -93,17 +92,23 @@ body {
   height: 430px;
   width: 0px;
   transform-origin: top center;
-  transform: translateX(200px) translateY(-300px) rotate(0deg);
+  transform: translateX(220px) translateY(-80px) rotate(0deg);
   z-index: 25;
   opacity: .7;
   border: 15px solid #000;
   filter: blur(0.5em);
   border-radius: 50%;
   transition: transform 1s ease-in-out;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 .shadow-rotate:after {
-  transform: translateX(210px) translateY(-250px) rotate(26deg);
+  transform: translateX(220px) translateY(-0px) rotate(26deg);
   z-index: 25;
 }
 
@@ -114,15 +119,15 @@ body {
 
 @keyframes shadow-shake {
   from {
-    transform: translateX(210px) translateY(-250px) rotate(25.5deg);
+    transform: translateX(220px) translateY(-0px) rotate(25.5deg);
   }
 
   50% {
-    transform: translateX(210px) translateY(-250px) rotate(26deg);
+    transform: translateX(220px) translateY(-0px) rotate(26deg);
   }
 
   to {
-    transform: translateX(210px) translateY(-250px) rotate(26.5deg);
+    transform: translateX(220px) translateY(-0px) rotate(26.5deg);
   }
 }
 
@@ -130,11 +135,17 @@ body {
   height: 500px;
   width: 90px;
   opacity: .5;
-  position: fixed;
+  position: absolute;
   transform: translateX(200px);
   z-index: 999;
   transform: rotate(10deg) translateX(190px) translateY(-80px);
   cursor: pointer;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 .btn-off {
@@ -143,8 +154,14 @@ body {
   opacity: .5;
   position: absolute;
   z-index: 999;
-  transform: rotate(35deg) translateX(60px) translateY(-110px);
+  transform: rotate(35deg) translateX(50px) translateY(-100px);
   cursor: pointer;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 p {
@@ -163,6 +180,12 @@ p {
   line-height: 1.5;
   letter-spacing: .1em;
   font-family: Helvetica;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 @import "js";
