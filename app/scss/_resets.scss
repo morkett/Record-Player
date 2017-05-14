@@ -50,4 +50,6 @@ table {
 
 * {
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(41, 41, 41, 0.004);
 }
