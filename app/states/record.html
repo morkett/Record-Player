@@ -1,0 +1,18 @@
+<div class="wrap">
+
+<img class="bkd" id="player" src="images/player-2.png">
+<img class="bkd" id="record" src="images/record-2.png"
+ ng-class="{'spin': record.canStart}">
+<img class="bkd" id="needle" ng-click="record.toggleStart(); record.startShake()"
+ ng-class="{'needle-on': record.canStart}" src="images/needle-2.png">
+
+<div class="bkd">
+<div class="shadow" ng-class="{'shadow-rotate': record.canStart}"></div>
+</div>
+
+
+</div>
+<audio ng-if="record.startSound" src="assets/player-sound.wav" loop autoplay></audio>
+<audio ng-if="record.startMusic" src="assets/Any-Colour-You-Like.mp3" loop autoplay></audio>
+
+<!-- TODO: ADD SHAKE TO NEEDLE AND SHADOW -->
